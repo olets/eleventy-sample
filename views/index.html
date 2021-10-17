@@ -1,15 +1,20 @@
+---
+title: Eleventy!
+images:
+  - parrot.gif
+---
 <!doctype html>
 <html lang="en">
  <head>
   <meta charset="utf-8">
-  <title>Giffleball</title>
+  <title>{{ title }}</title>
  </head>
  <body>
-  <h1>Giffleball</h1>
+  <h1>{{ title }}</h1>
   <ul>
-   <li><a href="img/???.jpg">???.jpg</a></li>
-   <li><a href="img/….jpg">….jpg</a></li>
-   <li><a href="img/parrot.gif">parrot.gif</a></li>
+  {% for filename in images %}
+   <li><a href="img/{{ filename }}">{{ filename }}</a></li>
+  {% endfor %}
   </ul>
  </body>
-</html>
+ </html>
