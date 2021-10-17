@@ -5,16 +5,16 @@ images:
 ---
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="utf-8">
-  <title>{{ title }}</title>
- </head>
- <body>
-  <h1>{{ title }}</h1>
-  <ul>
-  {% for filename in images %}
-   <li><a href="img/{{ filename }}">{{ filename }}</a></li>
-  {% endfor %}
-  </ul>
- </body>
- </html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <ul>
+      {% for filename in images %}
+        <li><a href="img/{{ filename | url_encode }}">{{ filename }}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
