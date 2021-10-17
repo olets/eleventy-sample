@@ -12,9 +12,10 @@ images:
   <body>
     <h1>{{ title }}</h1>
     <ul>
-      {% for filename in images %}
-        <li><a href="img/{{ filename | url_encode }}">{{ filename }}</a></li>
-      {% endfor %}
+      {% for filename in images -%}
+        {% capture path %}img/{{ filename }}{% endcapture -%}
+        <li><a href="img/{{ filename | url_encode }}">{{ filename }}</a> {{ path | filesize }}</li>
+      {%- endfor %}
     </ul>
   </body>
 </html>
