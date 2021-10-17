@@ -1,21 +1,12 @@
 ---
-title: Eleventy!
+layout: layout
+pageTitle: Homepage
 images:
   - parrot.gif
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ title }}</title>
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <ul>
-      {% for filename in images -%}
-        {% capture path %}img/{{ filename }}{% endcapture -%}
-        <li><a href="img/{{ filename | url_encode }}">{{ filename }}</a> {{ path | filesize }}</li>
-      {%- endfor %}
-    </ul>
-  </body>
-</html>
+<ul>
+  {% for filename in images -%}
+    {% capture path %}img/{{ filename }}{% endcapture -%}
+    <li><a href="img/{{ filename | url_encode }}">{{ filename }}</a> {{ path | filesize }}</li>
+  {%- endfor %}
+</ul>
