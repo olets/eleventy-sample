@@ -1,0 +1,5 @@
+---
+pageTitle: Second Post
+---
+
+Tada!
